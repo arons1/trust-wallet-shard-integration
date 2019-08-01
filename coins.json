@@ -1082,5 +1082,28 @@
             "clientPublic": "",
             "clientDocs": "https://fio.foundation"
         }
+    },
+    {
+        "id": "shardcoin",
+        "name": "Shard",
+        "symbol": "SHARD",
+        "decimals": 8,
+        "blockchain": "Bitcoin",
+        "derivationPath": "m/44'/325'/0'/0/0",
+        "curve": "secp256k1",
+        "publicKeyType": "secp256k1",
+        "p2pkhPrefix": 63,
+        "p2shPrefix": 125,
+        "publicKeyHasher": "sha256ripemd",
+        "base58Hasher": "sha256d",
+        "xpub": "xpub",
+        "xprv": "xprv",
+        "explorer": "http://shardexplorer.com/tx/",
+        "info": {
+            "url": "https://shardcoin.io",
+            "client": "https://github.com/trezor/blockbook",
+            "clientPublic": "https://shard.infinitywallet.io/",
+            "clientDocs": "https://github.com/trezor/blockbook/blob/master/docs/api.md"
+        }
     }
 ]

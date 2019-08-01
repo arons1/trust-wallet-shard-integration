@@ -58,6 +58,7 @@ enum TWCoinType {
     TWCoinTypePOANetwork = 178,
     TWCoinTypeQtum = 2301,
     TWCoinTypeXRP = 144,
+    TWCoinTypeShard = 325,
     TWCoinTypeSteem = 135,
     TWCoinTypeStellar = 148,
     TWCoinTypeTezos = 1729,

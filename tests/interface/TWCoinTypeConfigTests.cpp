@@ -144,6 +144,10 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetSymbol) {
 
     auto fio = WRAPS(TWCoinTypeConfigurationGetSymbol(TWCoinTypeFIO));
     assertStringsEqual(fio, "FIO");
+
+    auto shard = WRAPS(TWCoinTypeConfigurationGetSymbol(TWCoinTypeShard));
+    assertStringsEqual(shard, "SHARD");
+
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetDecimals) {
@@ -194,6 +198,7 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetDecimals) {
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeTerra), 6);
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeMonacoin), 8);
     ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeFIO), 9);
+    ASSERT_EQ(TWCoinTypeConfigurationGetDecimals(TWCoinTypeShard), 8);
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetTransactionURL) {
@@ -339,6 +344,9 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetTransactionURL) {
 
     auto mona = WRAPS(TWCoinTypeConfigurationGetTransactionURL(TWCoinTypeMonacoin, txId));
     assertStringsEqual(mona, "https://blockbook.electrum-mona.org/tx/123");
+
+    auto shard = WRAPS(TWCoinTypeConfigurationGetTransactionURL(TWCoinTypeShard$
+    assertStringsEqual(shard, "https://shard.infinitywallet.io/tx/123");
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetID) {
@@ -479,6 +487,9 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetID) {
 
     auto fio = WRAPS(TWCoinTypeConfigurationGetID(TWCoinTypeFIO));
     assertStringsEqual(fio, "fio");
+
+    auto shard = WRAPS(TWCoinTypeConfigurationGetID(TWCoinTypeShard));
+    assertStringsEqual(shard, "shard");
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetName) {
@@ -619,6 +630,9 @@ TEST(TWCoinTypeConfiguration, TWCoinTypeConfigurationGetName) {
 
     auto fio = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypeFIO));
     assertStringsEqual(fio, "FIO");
+
+    auto shard = WRAPS(TWCoinTypeConfigurationGetName(TWCoinTypeShard));
+    assertStringsEqual(shard, "Shard");
 }
 
 TEST(TWCoinTypeConfiguration, TWCoinTypeBlockchain) {
@@ -658,6 +672,7 @@ TEST(TWCoinTypeConfiguration, P2SHPrefix) {
     ASSERT_EQ(0x7a, TWCoinTypeP2shPrefix(TWCoinTypeRavencoin));
     ASSERT_EQ(0x05, TWCoinTypeP2shPrefix(TWCoinTypeGroestlcoin));
     ASSERT_EQ(0x37, TWCoinTypeP2shPrefix(TWCoinTypeMonacoin));
+    ASSERT_EQ(0x63, TWCoinTypeP2shPrefix(TWCoinTypeShard));
 }
 
 TEST(TWCoinTypeConfiguration, StaticPrefix) {
